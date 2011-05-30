@@ -16,7 +16,7 @@ document rb_bt
 end
 
 define rb_raise
-  call rb_raise((int)rb_eException, "Forced exception from GDB to get a valid ruby stack trace")
+  call rb_raise(rb_eException, "Forced exception from GDB to get a valid ruby stack trace")
 end
 document rb_raise
   Raise a Ruby exception from gdb.
