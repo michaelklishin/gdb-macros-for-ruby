@@ -4,7 +4,7 @@
 
 define rb_bt
   set $ary = backtrace(-1)
-  set $count = *($ary+8)
+  set $count = ((struct RArray) *$ary).len
   set $index = 0
   while $index < $count
     x/1s *(rb_ary_entry($ary, $index)+12)
