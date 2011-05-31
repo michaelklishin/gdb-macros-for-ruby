@@ -3,11 +3,11 @@
 ###################################################################
 
 define rb_bt
-  set $ary = (int)backtrace(-1)
-  set $count = *($ary+8)
+  set $ary = backtrace(-1)
+  set $count = ((struct RArray) *$ary).len
   set $index = 0
   while $index < $count
-    x/1s *((int)rb_ary_entry($ary, $index)+12)
+    x/1s ((struct RString) *rb_ary_entry($ary, $index)  ).ptr
     set $index = $index + 1
   end
 end
@@ -16,7 +16,7 @@ document rb_bt
 end
 
 define rb_raise
-  call rb_raise((int)rb_eException, "Forced exception from GDB to get a valid ruby stack trace")
+  call rb_raise(rb_eException, "Forced exception from GDB to get a valid ruby stack trace")
 end
 document rb_raise
   Raise a Ruby exception from gdb.
