@@ -26,10 +26,10 @@ end
 # Mauricio Fernandez's Ruby macros (Eigenclass.org)
 ###################################################################
 
-define eval
+define reval
   call(rb_p(rb_eval_string_protect($arg0,(int*)0)))
 end
-document eval
+document reval
    Evaluate an arbitrary Ruby expression from current gdb context.
 end
 
@@ -226,31 +226,31 @@ define rp
   end
 end
 document rp
-ruby¤ÎÁÈ¤ß¹ş¤ß¥ª¥Ö¥¸¥§¥¯¥È¤òÉ½¼¨¤¹¤ë
+rubyã®çµ„ã¿è¾¼ã¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
 end
 
 define nd_type
   print nodetype($arg0)
 end
 document nd_type
-ruby node ¤Î·¿¤òÉ½¼¨
+ruby node ã®å‹ã‚’è¡¨ç¤º
 end
 
 define nd_file
   print ((NODE*)$arg0)->nd_file
 end
 document nd_file
-node ¤Î¥½¡¼¥¹¥Õ¥¡¥¤¥ëÌ¾¤òÉ½¼¨
+node ã®ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¡¨ç¤º
 end
 
 define nd_line
   print nodeline($arg0)
 end
 document nd_line
-node ¤Î¹ÔÈÖ¹æ¤òÉ½¼¨
+node ã®è¡Œç•ªå·ã‚’è¡¨ç¤º
 end
 
-# ruby node ¤Î¥á¥ó¥Ğ¤òÉ½¼¨
+# ruby node ã®ãƒ¡ãƒ³ãƒã‚’è¡¨ç¤º
 
 define nd_head
   print "u1.node"
