@@ -68,7 +68,7 @@ document rb_object_counts
 end
 
 define rb_locals
-  eval "local_variables.map{|x| puts '%s = %s' % [x, eval(x)]}; nil"
+  reval "local_variables.each{|x| puts '%s = %s' % [x, eval(x.to_s)]};nil"
 end
 document rb_locals
   Print local variables and their values.
