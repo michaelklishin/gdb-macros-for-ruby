@@ -584,10 +584,11 @@ define rb_help
   printf "rb_object_counts -- Count and print all living objects by type.\n"
   printf "rb_locals -- Print local variables and their values.\n"
   printf "rb_backtrace -- Print the Ruby backtrace.\n"
-  printf "rb_help -- Print a list of all ruby macros\n"
   printf "rb_classname -- \n"
   printf "rb_p -- \n"
+  printf "rb_help -- Print a list of all ruby macros\n"
 end
 
 
-echo **** Loaded Ruby Macros Successfully ****\n
+echo \n\n*********** Loaded Ruby Macros Successfully **********\n
+echo \n**** Use rb_help to see all available Ruby Macros ****\n
