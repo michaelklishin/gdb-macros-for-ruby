@@ -30,7 +30,7 @@ define reval
   call(rb_p(rb_eval_string_protect($arg0,(int*)0)))
 end
 document reval
-   Evaluate an arbitrary Ruby expression from current gdb context.
+   Evaluate an arbitrary Ruby expression from current gdb context. You should always call rb_finish before calling reval for the first time.
 end
 
 define redirect_stdout
