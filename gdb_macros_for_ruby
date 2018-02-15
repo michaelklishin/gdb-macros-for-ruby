@@ -572,4 +572,23 @@ define rb_backtrace
   call rb_backtrace()
 end
 
-echo **** Loaded Ruby Macros Successfully ****\n
+define rb_help
+  printf "List of Ruby Macros:\n"
+  printf "\n"
+  printf "rb_bt -- Print the ruby stack trace interpreting backtrace as a Ruby array of string.\n"
+  printf "rb_raise -- Raise a Ruby exception from gdb.\n"
+  printf "reval -- Evaluate an arbitrary Ruby expression from current gdb context.\n"
+  printf "redirect_stdout -- Hijack Ruby $stdout and redirect it to /tmp/ruby-debug-<pid>.\n"
+  printf "restore_stdout -- Restore Ruby $stdout to its original value after hijacking it with redirect_stdout.\n"
+  printf "rb_finish -- Execute the current Ruby method until it returns and interrupts the process at a safe point (the rb_f_sleep function).\n"
+  printf "rb_object_counts -- Count and print all living objects by type.\n"
+  printf "rb_locals -- Print local variables and their values.\n"
+  printf "rb_backtrace -- Print the Ruby backtrace.\n"
+  printf "rb_classname -- \n"
+  printf "rb_p -- \n"
+  printf "rb_help -- Print a list of all ruby macros\n"
+end
+
+
+echo \n\n*********** Loaded Ruby Macros Successfully **********\n
+echo \n**** Use rb_help to see all available Ruby Macros ****\n
